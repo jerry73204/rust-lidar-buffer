@@ -3,7 +3,7 @@
 //! # Example
 //!
 //! ```rust
-//! # fn main() -> anyhow::Result<()> {
+//! # fn main() -> eyre::Result<()> {
 //! use velodyne_lidar::{types::measurements::Measurement, Config};
 //!
 //! let config = Config::new_vlp_32c_strongest();

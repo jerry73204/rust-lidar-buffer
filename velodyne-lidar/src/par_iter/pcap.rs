@@ -1,7 +1,7 @@
 //! Packet parallel iterator creation functions.
 
 use crate::Packet;
-use anyhow::Result;
+use eyre::Result;
 use pcap::{Capture, Device};
 use rayon::{iter::IterBridge, prelude::*};
 use std::path::Path;

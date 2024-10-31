@@ -2,7 +2,7 @@
 
 use super::convert::{try_packet_to_frame_xyz, ResultFrameXyzIter};
 use crate::{Config, Packet};
-use anyhow::Result;
+use eyre::Result;
 use pcap::{Capture, Device};
 use std::{iter, path::Path};
 

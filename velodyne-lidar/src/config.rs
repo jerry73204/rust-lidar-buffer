@@ -1,7 +1,7 @@
 //! Defines a set of Velodyne LiDAR configurations.
 
 use crate::{consts, packet::ReturnMode};
-use anyhow::Result;
+use eyre::Result;
 use itertools::izip;
 use measurements::{Angle, Length};
 

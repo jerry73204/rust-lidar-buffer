@@ -35,7 +35,7 @@ mod data_packet_to_frame_xyz {
         },
         Config, Config16, Config32, DataPacket,
     };
-    use anyhow::{anyhow, Result};
+    use eyre::{format_err, Result};
 
     /// Converts an iterator of packets to an iterator of [crate::types::frame_xyz::FrameXyz].
     pub fn data_packet_to_frame_xyz<'a, I>(config: Config, packets: I) -> Result<FrameXyzIter<'a>>
@@ -47,7 +47,7 @@ mod data_packet_to_frame_xyz {
 
         let config_kinds = config
             .try_into_kind()
-            .map_err(|_| anyhow!("invalid configuration"))?;
+            .map_err(|_| format_err!("invalid configuration"))?;
 
         let iter: FrameXyzIter = match config_kinds {
             K::Single16(config) => {
@@ -142,7 +142,7 @@ mod try_packet_to_frame_xyz {
         },
         Config, Config16, Config32, Packet,
     };
-    use anyhow::{anyhow, Result};
+    use eyre::{format_err, Result};
     use itertools::Itertools;
 
     /// Converts an iterator of packets to an iterator of [crate::types::frame_xyz::FrameXyz].
@@ -159,7 +159,7 @@ mod try_packet_to_frame_xyz {
 
         let config_kinds = config
             .try_into_kind()
-            .map_err(|_| anyhow!("invalid configuration"))?;
+            .map_err(|_| format_err!("invalid configuration"))?;
 
         let iter: ResultFrameXyzIter<_> = match config_kinds {
             K::Single16(config) => {

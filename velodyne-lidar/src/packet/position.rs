@@ -1,4 +1,4 @@
-use anyhow::{ensure, Result};
+use eyre::{ensure, Result};
 use std::mem;
 
 /// Represents a position packet from Velodyne sensor.

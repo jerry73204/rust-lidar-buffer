@@ -15,7 +15,7 @@ use crate::{
     },
     Config, Config16, Config32,
 };
-use anyhow::{anyhow, Result};
+use eyre::{format_err, Result};
 use measurements::Angle;
 use std::{ops::Range, time::Duration};
 
@@ -44,7 +44,10 @@ impl<'a> FiringBlockS16<'a> {
 }
 
 impl<'a> FiringLike for FiringBlockS16<'a> {
-    type Point<'p> = &'p Channel where Self: 'p;
+    type Point<'p>
+        = &'p Channel
+    where
+        Self: 'p;
 
     fn start_toh(&self) -> Duration {
         self.toh
@@ -82,7 +85,10 @@ impl<'a> FiringBlockS32<'a> {
 }
 
 impl<'a> FiringLike for FiringBlockS32<'a> {
-    type Point<'p> = &'p Channel where Self: 'p;
+    type Point<'p>
+        = &'p Channel
+    where
+        Self: 'p;
 
     fn start_toh(&self) -> Duration {
         self.toh
@@ -162,7 +168,10 @@ impl<'a> FiringBlockD16<'a> {
 }
 
 impl<'a> FiringLike for FiringBlockD16<'a> {
-    type Point<'p> = ChannelRefD<'p> where Self: 'p;
+    type Point<'p>
+        = ChannelRefD<'p>
+    where
+        Self: 'p;
 
     fn start_toh(&self) -> Duration {
         self.toh
@@ -244,7 +253,10 @@ impl<'a> FiringBlockD32<'a> {
 }
 
 impl<'a> FiringLike for FiringBlockD32<'a> {
-    type Point<'p> = ChannelRefD<'p> where Self: 'p;
+    type Point<'p>
+        = ChannelRefD<'p>
+    where
+        Self: 'p;
 
     fn start_toh(&self) -> Duration {
         self.toh
@@ -266,7 +278,7 @@ pub type FiringBlock<'a> =
 
 impl<'a> FiringBlock<'a> {
     pub fn to_firing_xyz(&self, beams: &Config) -> Result<FiringXyz> {
-        let err = || anyhow!("TODO");
+        let err = || format_err!("TODO");
 
         use FormatKind as F;
 

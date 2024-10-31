@@ -1,5 +1,5 @@
 use super::{DataPacket, PositionPacket};
-use anyhow::{bail, Result};
+use eyre::{bail, Result};
 
 /// An enumeration of data packet and position packet.
 #[derive(Debug, Clone, PartialEq, Eq)]

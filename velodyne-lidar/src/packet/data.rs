@@ -9,7 +9,7 @@ use crate::{
     utils::AngleExt as _,
     Config16, Config32,
 };
-use anyhow::{ensure, Result};
+use eyre::{ensure, Result};
 use itertools::{chain, izip, Itertools as _};
 use measurements::Angle;
 use std::{f64::consts::PI, iter, mem, time::Duration};

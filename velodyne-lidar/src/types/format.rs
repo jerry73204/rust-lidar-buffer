@@ -4,7 +4,7 @@ use crate::{
     packet::{ProductID, ReturnMode},
     traits::{AzimuthRange, PointField},
 };
-use anyhow::Result;
+use eyre::Result;
 use measurements::Angle;
 use std::ops::Range;
 
@@ -223,7 +223,8 @@ where
     D16: PointField,
     D32: PointField,
 {
-    type Point<'a> = FormatKind<S16::Point<'a>, S32::Point<'a>, D16::Point<'a>, D32::Point<'a>>
+    type Point<'a>
+        = FormatKind<S16::Point<'a>, S32::Point<'a>, D16::Point<'a>, D32::Point<'a>>
     where
         S16: 'a,
         S32: 'a,
