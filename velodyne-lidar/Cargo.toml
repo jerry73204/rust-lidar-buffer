@@ -14,21 +14,21 @@ license = "MIT"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-anyhow = "1.0.80"
-serde = { version = "1.0.197", features = ["derive"] }
-serde_yaml = "0.9.32"
+anyhow = "1.0.91"
+serde = { version = "1.0.214", features = ["derive"] }
+serde_yaml = "0.9.34"
 serde-big-array = "0.5.1"
-chrono = "0.4.34"
+chrono = "0.4.38"
 derivative = "2.2.0"
-itertools = "0.12.1"
+itertools = "0.13.0"
 noisy_float = { version = "0.2.0", features = ["serde"] }
 measurements = "0.11.0"
-once_cell = "1.19.0"
-strum = { version = "0.26.1", features = ["derive"] }
-nmea = { version = "0.6.0", optional = true }
-pcap = { version = "1.2.0", optional = true }
-log = "0.4.20"
-rayon = { version = "1.8.1", optional = true }
+once_cell = "1.20.2"
+strum = { version = "0.26.3", features = ["derive"] }
+nmea = { version = "0.7.0", optional = true }
+pcap = { version = "2.2.0", optional = true }
+log = "0.4.22"
+rayon = { version = "1.10.0", optional = true }
 
 # [dev-dependencies]
 # rand = "0.8.4"

@@ -6,7 +6,7 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-anyhow = "1.0.80"
-itertools = "0.12.1"
-pcap = "1.2.0"
+anyhow = "1.0.91"
+itertools = "0.13.0"
+pcap = "2.2.0"
 velodyne-lidar = { version = "0.2.0", path = "../velodyne-lidar", features = ["full"] }
