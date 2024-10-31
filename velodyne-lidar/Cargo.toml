@@ -1,6 +1,6 @@
 [package]
 name = "velodyne-lidar"
-version = "0.2.0"
+version = "0.3.0"
 edition = "2021"
 authors = ["jerry73204 <jerry73204@gmail.com>"]
 description = "Velodyne lidar data processing algorithms and utilities"
