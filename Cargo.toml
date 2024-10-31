@@ -2,7 +2,6 @@
 resolver = "2"
 members = [
     "velodyne-lidar",
-    "ouster-lidar",
     "velodyne-params",
     "velodyne-test",
 ]
