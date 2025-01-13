@@ -29,7 +29,7 @@ pub struct FiringBlockS16<'a> {
     pub channels: ChannelArraySRef<'a, 16>,
 }
 
-impl<'a> FiringBlockS16<'a> {
+impl FiringBlockS16<'_> {
     pub fn to_firing_raw(&self) -> FiringRawS16 {
         FiringRawS16 {
             toh: self.toh,
@@ -43,7 +43,7 @@ impl<'a> FiringBlockS16<'a> {
     }
 }
 
-impl<'a> FiringLike for FiringBlockS16<'a> {
+impl FiringLike for FiringBlockS16<'_> {
     type Point<'p>
         = &'p Channel
     where
@@ -70,7 +70,7 @@ pub struct FiringBlockS32<'a> {
     pub channels: ChannelArraySRef<'a, 32>,
 }
 
-impl<'a> FiringBlockS32<'a> {
+impl FiringBlockS32<'_> {
     pub fn to_firing_raw(&self) -> FiringRawS32 {
         FiringRawS32 {
             toh: self.toh,
@@ -84,7 +84,7 @@ impl<'a> FiringBlockS32<'a> {
     }
 }
 
-impl<'a> FiringLike for FiringBlockS32<'a> {
+impl FiringLike for FiringBlockS32<'_> {
     type Point<'p>
         = &'p Channel
     where
@@ -167,7 +167,7 @@ impl<'a> FiringBlockD16<'a> {
     }
 }
 
-impl<'a> FiringLike for FiringBlockD16<'a> {
+impl FiringLike for FiringBlockD16<'_> {
     type Point<'p>
         = ChannelRefD<'p>
     where
@@ -252,7 +252,7 @@ impl<'a> FiringBlockD32<'a> {
     }
 }
 
-impl<'a> FiringLike for FiringBlockD32<'a> {
+impl FiringLike for FiringBlockD32<'_> {
     type Point<'p>
         = ChannelRefD<'p>
     where
@@ -276,7 +276,7 @@ impl<'a> FiringLike for FiringBlockD32<'a> {
 pub type FiringBlock<'a> =
     FormatKind<FiringBlockS16<'a>, FiringBlockS32<'a>, FiringBlockD16<'a>, FiringBlockD32<'a>>;
 
-impl<'a> FiringBlock<'a> {
+impl FiringBlock<'_> {
     pub fn to_firing_xyz(&self, beams: &Config) -> Result<FiringXyz> {
         let err = || format_err!("TODO");
 

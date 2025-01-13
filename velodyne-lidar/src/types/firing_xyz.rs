@@ -99,7 +99,7 @@ mod ref_kind {
     pub type FiringXyzRef<'a> =
         FormatKind<&'a FiringXyzS16, &'a FiringXyzS32, &'a FiringXyzD16, &'a FiringXyzD32>;
 
-    impl<'a> FiringXyzRef<'a> {
+    impl FiringXyzRef<'_> {
         pub fn time(&self) -> Duration {
             match self {
                 FiringXyzRef::Single16(me) => me.toh,
