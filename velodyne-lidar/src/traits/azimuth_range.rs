@@ -19,25 +19,25 @@ pub trait AzimuthRange {
     }
 }
 
-impl<'a> AzimuthRange for FiringBlockS16<'a> {
+impl AzimuthRange for FiringBlockS16<'_> {
     fn azimuth_range(&self) -> Range<Angle> {
         self.azimuth_range.clone()
     }
 }
 
-impl<'a> AzimuthRange for FiringBlockS32<'a> {
+impl AzimuthRange for FiringBlockS32<'_> {
     fn azimuth_range(&self) -> Range<Angle> {
         self.azimuth_range.clone()
     }
 }
 
-impl<'a> AzimuthRange for FiringBlockD16<'a> {
+impl AzimuthRange for FiringBlockD16<'_> {
     fn azimuth_range(&self) -> Range<Angle> {
         self.azimuth_range.clone()
     }
 }
 
-impl<'a> AzimuthRange for FiringBlockD32<'a> {
+impl AzimuthRange for FiringBlockD32<'_> {
     fn azimuth_range(&self) -> Range<Angle> {
         self.azimuth_range.clone()
     }

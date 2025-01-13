@@ -83,7 +83,7 @@ mod ref_kind {
     pub type FiringRawRef<'a> =
         FormatKind<&'a FiringRawS16, &'a FiringRawS32, &'a FiringRawD16, &'a FiringRawD32>;
 
-    impl<'a> FiringRawRef<'a> {
+    impl FiringRawRef<'_> {
         pub fn time(&self) -> Duration {
             match self {
                 FiringRawRef::Single16(me) => me.toh,

@@ -66,17 +66,20 @@ where
     where
         I: IntoIterator<Item = E>,
     {
-        itertools::unfold(Some((firings.into_iter(), self)), |state| {
-            if let Some((iter, conv)) = state {
-                Some(if let Some(firing) = iter.next() {
-                    conv.push_one(firing)
+        std::iter::from_fn({
+            let mut state = Some((firings.into_iter(), self));
+            move || {
+                if let Some((iter, conv)) = &mut state {
+                    Some(if let Some(firing) = iter.next() {
+                        conv.push_one(firing)
+                    } else {
+                        let output = conv.take();
+                        state = None;
+                        output
+                    })
                 } else {
-                    let output = conv.take();
-                    *state = None;
-                    output
-                })
-            } else {
-                None
+                    None
+                }
             }
         })
         .flatten()
