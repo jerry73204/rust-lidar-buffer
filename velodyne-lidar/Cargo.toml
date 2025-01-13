@@ -18,7 +18,6 @@ serde = { version = "1.0.214", features = ["derive"] }
 serde_yaml = "0.9.34"
 serde-big-array = "0.5.1"
 chrono = "0.4.38"
-derivative = "2.2.0"
 itertools = "0.13.0"
 noisy_float = { version = "0.2.0", features = ["serde"] }
 measurements = "0.11.0"
